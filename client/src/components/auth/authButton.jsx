@@ -4,10 +4,21 @@ import { isLoggedIn } from '../../services/user';
 
 const AuthButton = (props) => {
     if (isLoggedIn()) {
-        return <Link className="btn btn-info" to="/logout">Logout</Link>;
+        return (
+            <div>
+                <Link to="/logout">Logout</Link>
+                <Link to={{ pathname: '/admin' }}
+                    >My Verses</Link>
+            </div>
+        );
     } else {
-        return <Link className="btn btn-info" to="/login">Login</Link>;
+        return (
+            <div>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Sign Up</Link>
+            </div>
+        )
     }
 };
 
-export default AuthButton;
+export { AuthButton };

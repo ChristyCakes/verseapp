@@ -3,6 +3,8 @@ const path = require('path');
 const CLIENT_DEST = path.join(__dirname, './client/dist');
 
 module.exports = {
+    devtool: 'source-map',
+
     entry: ['@babel/polyfill', './client/src/index.js'],
     output: { path: CLIENT_DEST, filename: 'bundle.js' },
     module: {
@@ -37,6 +39,10 @@ module.exports = {
                     },
                 },
             },
+            {
+                test: /\.css$/,
+                loader: ['style-loader', 'css-loader'],
+            }
         ],
     },
     resolve: {
