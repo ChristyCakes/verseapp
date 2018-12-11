@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
-import Bubble from './bubble'
+import * as baseService from '../services/base';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -34,10 +34,20 @@ const styles = theme => ({
 class SimpleModal extends React.Component {
   state = {
     open: false,
+    content: {}
   };
 
   handleOpen = () => {
-    this.setState({ open: true });
+    baseService.get('/api/passages')
+    .then(data => {
+        this.setState({ content: data.passage })
+    })
+    .then(() => this.setState({ open: true }))
+    .catch(err => {
+        alert("Your Verse Failed to Load");
+        console.log(err)
+    })
+    
   };
 
   handleClose = () => {
@@ -53,19 +63,19 @@ class SimpleModal extends React.Component {
         {/* <Bubble label="angry" color="secondary" onClick={this.handleOpen}/> */}
         <Button variant="contained" color={this.props.color} onClick={this.handleOpen}>{this.props.label}</Button>
         <Modal
-          aria-labelledby="simple-modal-title"
-          aria-describedby="simple-modal-description"
+        //   aria-labelledby="simple-modal-title"
+        //   aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}
         >
           <div style={getModalStyle()} className={classes.paper}>
             <Typography variant="h6" id="modal-title">
-              Text in a modal
+              {this.state.content}
             </Typography>
             <Typography variant="subtitle1" id="simple-modal-description">
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              bible verse here
             </Typography>
-            <SimpleModalWrapped />
+            {/* <SimpleModalWrapped /> */}
           </div>
         </Modal>
       </div>
