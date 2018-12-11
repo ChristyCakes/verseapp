@@ -8,8 +8,6 @@ router.get('/me', tokenMiddleware, isLoggedIn, (req, res) => {
 	res.json(req.user);
 });
 
-// change to condition for :id
-// add post, put, del
 router.get('/', (req, res) => {
 	UsersController.getAll(req, res)
 		.catch(err => {
