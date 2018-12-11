@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Bubble from './bubble'
-import Button from '@material-ui/core/Button';
+// import { BrowserRouter as Router, Link } from 'react-router-dom';
 // import { AuthButton } from './auth';
-import * as baseService from '../services/base';
 import SimpleModal from './simplemodal';
-import ModalContainer from './modalcontainer';
 
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            verses: "",
-        }
-        // this.postVerse = this.postVerse.bind(this);
-        // this.inputHandler = this.inputHandler.bind(this);
     }
-
 
     // inputHandler(event) { this.setState({ [event.target.name]: event.target.value }) };
 
@@ -35,9 +25,6 @@ class Home extends Component {
         return (
             <div>
                 <h1 className='grey'>How Do You Feel?</h1>
-                <Bubble label="angry" color="secondary" />
-                <Bubble label="happy" color="primary" />
-                <Bubble><SimpleModal label="stressed" color="secondary"/></Bubble>
                 {/* <Link to={'/more'}>
                     <Button
                         variant="outlined"
@@ -60,9 +47,7 @@ class Home extends Component {
                     </button>
                 </form> */}
                 <SimpleModal color="secondary" label="angry" document="anger" />
-                <SimpleModal color="primary" label="happy"/>
-                {/* <ModalContainer color="secondary" label="angry" document="anger" /> */}
-                {/* <Button onClick={this.handleOpen}>Open Modal</Button> */}
+                <SimpleModal color="primary" label="happy" document="happy"/>
             </div>
         )
     }
