@@ -24,7 +24,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1 className='grey'>How Do You Feel?</h1>
+                <h1 className='grey center'>How Do You Feel?</h1>
                 {/* <Link to={'/more'}>
                     <Button
                         variant="outlined"
@@ -46,8 +46,8 @@ class Home extends Component {
                         Add
                     </button>
                 </form> */}
-                <SimpleModal color="secondary" label="angry" document="anger" />
-                <SimpleModal color="primary" label="happy" document="happy"/>
+                <SimpleModal label="angry" color="primary" document="anger" />
+                <SimpleModal label="happy" color="secondary" document="happiness"/>
             </div>
         )
     }
