@@ -29,7 +29,6 @@ const styles = theme => ({
     paper: {
         position: 'absolute',
         width: theme.spacing.unit * 50,
-        // backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
     }
@@ -45,13 +44,14 @@ const colortheme = createMuiTheme({
 class SimpleModal extends React.Component {
     state = {
         open: false,
-        content: {}
+        reference: {},
+        content: ""
     };
 
     handleOpen = () => {
         baseService.get('/api/passages')
             .then(data => {
-                this.setState({ content: data.passage })
+                this.setState({ reference: data.passage })
             })
             // api call .then(() => )
             .then(() => this.setState({ open: true }))
@@ -74,7 +74,7 @@ class SimpleModal extends React.Component {
                 </MuiThemeProvider>
                 <Modal open={this.state.open} onClose={this.handleClose}>
                     <div style={getModalStyle()} className={classes.paper}>
-                        <Typography variant="h6" id="modal-title">{this.state.content}</Typography>
+                        <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">bible verse here</Typography>
                     </div>
                 </Modal>
