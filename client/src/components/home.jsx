@@ -6,6 +6,8 @@ import SimpleModal from './simplemodal';
 import 'isomorphic-fetch';
 // import 'es6-promise';
 
+var request = require('request');
+
 let key = '6J2E5Ac8MKyN3O4bCU9ZSUe1ORAwf9oNoK2UIWCC'
 let encoded = window.btoa(`${key}: `)
 
@@ -16,24 +18,28 @@ class Home extends Component {
         this.state = { verse: "" }
     }
 
+    bibleapi() {
+        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const url = "https://bibles.org/v2/verses/eng-NLT:Acts.8.34.js"; // site that doesn’t send Access-Control-*
+        fetch(proxyurl + url, {
+            headers: new Headers({ 'Authorization': 'Basic ' + window.btoa('6J2E5Ac8MKyN3O4bCU9ZSUe1ORAwf9oNoK2UIWCC' + ':' + 'x') }),
+            redirect: "follow",
+            // credentials: 'include'
+        }) // https://cors-anywhere.herokuapp.com/https://example.com
+            .then(response => response.text())
+            .then(contents => console.log(contents.verses.text))
+            .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+    }
+
+
     // bibleapi() {
     //     fetch('https://bibles.org/v2/chapters/eng-KJVA:1Cor.2/verses.js?start=5&end=6', {
-    //         // method: 'GET',
-    //         // headers: new Headers({ 'Authorization': `Basic ${encoded}` }),
     //         headers: new Headers({ 'Authorization': 'Basic ' + window.btoa('6J2E5Ac8MKyN3O4bCU9ZSUe1ORAwf9oNoK2UIWCC' + ':' + 'x') }),
     //         redirect: "follow",
     //         credentials: 'include'
     //     })
     //         .then((res) => { console.log(res.json()) })
     // };
-
-
-    bibleapi() {
-        fetch('https://biblia.com/bible/niv/Jn3.16')
-            .then((res) => { console.log(res.json()) })
-    }
-
-
 
 
     // inputHandler(event) { this.setState({ [event.target.name]: event.target.value }) };

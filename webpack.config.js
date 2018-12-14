@@ -4,7 +4,11 @@ const CLIENT_DEST = path.join(__dirname, './client/dist');
 
 module.exports = {
     devtool: 'source-map',
-
+    // node: {
+    //     fs: 'empty',
+    //     net: 'empty',
+    //     tls: 'empty',
+    // },
     entry: ['@babel/polyfill', './client/src/index.js'],
     output: { path: CLIENT_DEST, filename: 'bundle.js' },
     module: {
