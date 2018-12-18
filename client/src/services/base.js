@@ -36,7 +36,6 @@ function json(url, method = 'GET', payload = {}) {
         body: JSON.stringify(payload),
         headers: new Headers({
             'Content-Type': 'application/json',
-            // 'Authorization': authToken
         })
     };
 

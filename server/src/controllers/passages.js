@@ -7,14 +7,13 @@ PassagesController.get = async (req, res) => {
         await Passages.find({
             emotion: req
         })
-        .select('verse')        
-        .exec((err, passages) => {
+        .select('reference')        
+        .exec((err, references) => {
             if(err) {
                 console.log(err)
             }
-            console.log('all passages: ', passages)
-            let random = Math.floor(Math.random()*passages.length)
-            res.json(passages[random])
+            let random = Math.floor(Math.random()*references.length)
+            res.json(references[random])
         });
     }
     catch (err) {

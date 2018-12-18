@@ -1,14 +1,12 @@
 const path = require('path');
-
 const CLIENT_DEST = path.join(__dirname, './client/dist');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+    plugins: [
+        new Dotenv()
+    ],
     devtool: 'source-map',
-    // node: {
-    //     fs: 'empty',
-    //     net: 'empty',
-    //     tls: 'empty',
-    // },
     entry: ['@babel/polyfill', './client/src/index.js'],
     output: { path: CLIENT_DEST, filename: 'bundle.js' },
     module: {

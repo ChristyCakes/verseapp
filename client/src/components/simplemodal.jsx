@@ -13,6 +13,8 @@ const proxyurl = "https://serene-crag-81882.herokuapp.com/";
 const url = "https://bibles.org/v2/chapters/eng-KJVA:1Cor.2/verses.js?start=5&end=6";       // decide: do i want to one verse only at a time, or two - then set state as array of verse, map/loop through them, remove superscript
 // const url = "https://bibles.org/v2/verses/eng-GNTD:Acts.8.34.js";
 
+const BIBLE_API_KEY = process.env.BIBLE_API_KEY
+
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -57,16 +59,15 @@ class SimpleModal extends React.Component {
     // onClick of emotion button, 2 steps occur:
     handleOpen = () => {
 
-        // call express api, returns a random verse reference from specified emotion document
+        // call express api, returns a random reference from specified emotion document
         baseService.get(`/api/passages/${this.props.document}`)
             .then(data => {
-                console.log("simplemodal data:", data.verse)
-                this.setState({ reference: data.verse })
+                this.setState({ reference: data.reference })
             })
 
             // call Bible api with reference, returns verse content
             fetch(proxyurl + url, {
-                headers: new Headers({ 'Authorization': 'Basic ' + window.btoa('6J2E5Ac8MKyN3O4bCU9ZSUe1ORAwf9oNoK2UIWCC' + ':' + 'x') }),
+                headers: new Headers({ 'Authorization': 'Basic ' + window.btoa(`${BIBLE_API_KEY}: x`) }),
                 redirect: "follow",
             })
                 .then(res => res.json())
