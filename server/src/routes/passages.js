@@ -4,8 +4,8 @@ import PassagesController from '../controllers/passages';
 
 let router = Router();
 
-router.get('/', (req, res) => {
-	PassagesController.getAll(req, res)
+router.get('/:document', (req, res) => {
+	PassagesController.get(req.params.document, res)
 		.catch(err => {
 			console.log(err);
 			res.sendStatus(500);

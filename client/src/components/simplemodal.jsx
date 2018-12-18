@@ -9,6 +9,11 @@ import * as baseService from '../services/base';
 import pink from '@material-ui/core/colors/pink';
 import lightblue from '@material-ui/core/colors/lightblue';
 
+const proxyurl = "https://serene-crag-81882.herokuapp.com/";
+const url = "https://bibles.org/v2/chapters/eng-KJVA:1Cor.2/verses.js?start=5&end=6";       // decide: do i want to one verse only at a time, or two - then set state as array of verse, map/loop through them, remove superscript
+// const url = "https://bibles.org/v2/verses/eng-GNTD:Acts.8.34.js";
+
+
 function rand() {
     return Math.round(Math.random() * 20) - 10;
 }
@@ -29,6 +34,7 @@ const styles = theme => ({
     paper: {
         position: 'absolute',
         width: theme.spacing.unit * 50,
+        backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
     }
@@ -44,16 +50,30 @@ const colortheme = createMuiTheme({
 class SimpleModal extends React.Component {
     state = {
         open: false,
-        reference: {},
+        reference: "",
         content: ""
     };
 
+    // onClick of emotion button, 2 steps occur:
     handleOpen = () => {
-        baseService.get('/api/passages')
+
+        // call express api, returns a random verse reference from specified emotion document
+        baseService.get(`/api/passages/${this.props.document}`)
             .then(data => {
-                this.setState({ reference: data.passage })
+                console.log("simplemodal data:", data.verse)
+                this.setState({ reference: data.verse })
             })
-            // api call .then(() => )
+
+            // call Bible api with reference, returns verse content
+            fetch(proxyurl + url, {
+                headers: new Headers({ 'Authorization': 'Basic ' + window.btoa('6J2E5Ac8MKyN3O4bCU9ZSUe1ORAwf9oNoK2UIWCC' + ':' + 'x') }),
+                redirect: "follow",
+            })
+                .then(res => res.json())
+                .then(contents => {
+                    this.setState({ content: contents.response.verses[0].text })
+                })
+                .catch((e) => console.log(`Can’t access ${url}. Error: ${e}`))
             .then(() => this.setState({ open: true }))
             .catch(err => {
                 alert("Your Verse Failed to Load");
@@ -75,7 +95,7 @@ class SimpleModal extends React.Component {
                 <Modal open={this.state.open} onClose={this.handleClose}>
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
-                        <Typography variant="subtitle1" id="simple-modal-description">bible verse here</Typography>
+                        <Typography variant="subtitle1" id="simple-modal-description"><div dangerouslySetInnerHTML={ {__html: this.state.content} } /></Typography>
                     </div>
                 </Modal>
             </div>

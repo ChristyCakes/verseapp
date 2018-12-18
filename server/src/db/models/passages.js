@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 
 const passages = new mongoose.Schema({
-    passage: {type:String}
+    emotion: {type:String},
+    verse: {type:String}
 })
 
 let passagesSchema = mongoose.model('Passages', passages);
