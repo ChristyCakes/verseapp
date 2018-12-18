@@ -7,7 +7,7 @@ PassagesController.get = async (req, res) => {
         await Passages.find({
             emotion: req
         })
-        .select('reference')        
+        .select('reference abbr start end')        
         .exec((err, references) => {
             if(err) {
                 console.log(err)
