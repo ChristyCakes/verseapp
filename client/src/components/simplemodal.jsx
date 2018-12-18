@@ -56,7 +56,7 @@ class SimpleModal extends React.Component {
         abbr: "",
         start: "",
         end: "",
-        content: "",
+        content: []
     };
 
     // onClick of emotion button, 3 steps occur:
@@ -65,7 +65,7 @@ class SimpleModal extends React.Component {
         // call express api, returns a random reference from specified emotion document
         baseService.get(`/api/passages/${this.props.document}`)
             .then(data => {
-                this.setState({ 
+                this.setState({
                     reference: data.reference,
                     abbr: data.abbr,
                     start: data.start,
@@ -82,12 +82,20 @@ class SimpleModal extends React.Component {
                 })
                     .then(res => res.json())
                     .then(contents => {
-                        this.setState({ content: contents.response.verses[0].text })
+                        let versearray = contents.response.verses
+                        versearray.forEach(verse => {
+                            this.setState({ 
+                                content: [...this.state.content, verse.text] })
+                        })
+                        // console.log(this.state.content)  -- array of strings
+
+                        //     this.setState({ content: contents.response.verses[0].text })
+            
                     })
                     .catch((e) => console.log(`Can’t access Bible API url. Error: ${e}`))
             })
 
-            // open modal with reference and verse content
+            // open modal displaying reference and verse content
             .then(() => this.setState({ open: true }))
             .catch(err => {
                 alert("Your Verse Failed to Load");
@@ -96,7 +104,7 @@ class SimpleModal extends React.Component {
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ open: false, content: [] });
     };
 
     render() {
