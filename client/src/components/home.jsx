@@ -12,7 +12,7 @@ class Home extends Component {
             <div>
                 <h1 className='grey center'>How Do You Feel?</h1>
                 <SimpleModal label="angry" color="primary" document="anger" />
-                <SimpleModal label="happy" color="secondary" document="happiness" />
+                <SimpleModal label="content" color="secondary" document="content" />
             </div>
         )
     }
