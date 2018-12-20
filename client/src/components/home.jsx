@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import SimpleModal from './simplemodal';
-import 'isomorphic-fetch';
-// import ColorTheme from './colortheme'
 import { createMuiTheme } from '@material-ui/core/styles';
-
+import 'isomorphic-fetch';
 
 const colortheme = createMuiTheme({
     palette: {
-        primary: { main:'#f50057' },
+        primary: { main:'#e91e63' },
         secondary: { main:'#03a9f4' },
         contrastText: '#fff',
     }
@@ -15,8 +13,16 @@ const colortheme = createMuiTheme({
 
 const lightcolors = createMuiTheme({
     palette: {
-        primary: { main:'#f44336' },
+        primary: { main:'#ec407a' },
         secondary: { main:'#00bcd4' },
+        contrastText: '#fff'
+    }
+})
+
+const darkcolors = createMuiTheme({
+    palette: {
+        primary: { main:'#ad1457' },
+        secondary: { main:'#0277bd' },
         contrastText: '#fff'
     }
 })
@@ -33,7 +39,7 @@ class Home extends Component {
                 <SimpleModal label="angry" theme={colortheme} color="primary" document="anger" />
                 <SimpleModal label="content" theme={colortheme} color="secondary" document="content" />
                 <SimpleModal label="stressed" theme={lightcolors} color="primary" document="stress"  />
-                {/* <SimpleModal label="depressed" color="secondary.dark" document="depression" /> */}
+                <SimpleModal label="depressed" theme={darkcolors} color="secondary" document="depression" />
             </div>
         )
     }
