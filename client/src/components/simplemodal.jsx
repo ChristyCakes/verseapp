@@ -21,7 +21,7 @@ function getModalStyle() {
         top: `${top}%`,
         left: `${left}%`,
         transform: `translate(-${top}%, -${left}%)`,
-        margin: 5
+        margin: 5,
     };
 }
 
@@ -32,6 +32,10 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
+    },
+    
+    margin: {
+        margin: 5
     }
 });
 
@@ -98,13 +102,12 @@ class SimpleModal extends React.Component {
         return (
             <div>
                 <MuiThemeProvider theme={this.props.theme}>
-                    <Button style={getModalStyle()} variant="contained" color={this.props.color} onClick={this.handleOpen}>{this.props.label}</Button>
+                    <Button className={classes.margin} variant="contained" color={this.props.color} onClick={this.handleOpen}>{this.props.label}</Button>
                 </MuiThemeProvider>
                 <Modal open={this.state.open} onClose={this.handleClose}>
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
-
                     </div>
                 </Modal>
             </div>

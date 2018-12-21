@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './home';
+import HomeWrapped from './home';
 import '../styles.css';
 
 class App extends Component {
@@ -10,7 +10,7 @@ class App extends Component {
             <Router>
                 <Fragment>
                     <Switch>
-                        <Route exact path="/" component={Home} />
+                        <Route exact path="/" component={HomeWrapped} />
                     </Switch>
                 </Fragment>
             </Router>
