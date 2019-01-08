@@ -1,13 +1,13 @@
 # Verse App
 ### Verse App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Verse App is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments.
-### This basic web app that utilizes the following tools:
+### This basic web app utilizes the following tools:
 
 * React Router
 * Express.js
-<!-- * Passport Authentication -->
 * MongoDB
 * Material UI
 
 ### New accomplishments with this project:
 * Integrate MongoDB with React
 * Retrieve data with a key from an external API (Bible Search API)
+* Create and use a proxy server (with Heroku) to access external API 

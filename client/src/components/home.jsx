@@ -16,17 +16,15 @@ const reds = createMuiTheme({
 
 const blues = createMuiTheme({
     palette: {
-        primary: { main: '#00e5ff' },
-        secondary: { main: '#2979ff' },
-        contrastText: '#fff'
+        primary: { main: '#00e5ff', contrastText: "#fff" },
+        secondary: { main: '#2979ff', contrastText: "#fff" }
     }
 })
 
 const greens = createMuiTheme({
     palette: {
-        primary: { main: '#76ff03' },
-        secondary: { main: '#c6ff00' },
-        contrastText: '#fff'
+        primary: { main: '#76ff03', contrastText: "#fff" },
+        secondary: { main: '#00e676', contrastText: "#fff" }
     }
 })
 
@@ -60,7 +58,7 @@ class Home extends Component {
                         alignItems="center"
                     >
                         <SimpleModal label="angry" theme={reds} color="primary" document="anger" />
-                        <SimpleModal label="worried" theme={greens} color="primary" document="worry" />
+                        <SimpleModal label="fearful" theme={greens} color="primary" document="fear" />
                     </Grid>
                     <Grid
                         container
@@ -69,7 +67,7 @@ class Home extends Component {
                         alignItems="center"
                     >
                         <SimpleModal label="ashamed" theme={blues} color="secondary" document="shame" />
-                        <SimpleModal label="content" theme={blues} color="primary" document="content" />
+                        <SimpleModal label="happy" theme={blues} color="primary" document="happiness" />
                         <SimpleModal label="stressed" theme={reds} color="secondary" document="stress" />
                     </Grid>
                     <Grid
@@ -79,7 +77,8 @@ class Home extends Component {
                         alignItems="center"
                     >
                         <SimpleModal label="prideful" theme={reds} color="primary" document="pride" />
-                        <SimpleModal label="depressed" theme={blues} color="secondary" document="depression" />
+                        <SimpleModal label="sad" theme={blues} color="secondary" document="sadness" />
+                        <SimpleModal label="hopeful" theme={greens} color="secondary" document="hope" />
                     </Grid>
                     <Grid
                         container
