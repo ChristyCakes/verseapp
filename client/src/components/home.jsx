@@ -58,7 +58,7 @@ class Home extends Component {
                         alignItems="center"
                     >
                         <SimpleModal label="angry" theme={reds} color="primary" document="anger" />
-                        <SimpleModal label="fearful" theme={greens} color="primary" document="fear" />
+                        <SimpleModal label="afraid" theme={greens} color="primary" document="fear" />
                     </Grid>
                     <Grid
                         container
