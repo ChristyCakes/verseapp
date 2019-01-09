@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import * as baseService from '../services/base';
+import Thumbs from './thumbs'
 
 const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
@@ -108,6 +109,7 @@ class SimpleModal extends React.Component {
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
+                        <Thumbs reference={this.state.reference} />
                     </div>
                 </Modal>
             </div>

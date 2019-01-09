@@ -10,4 +10,4 @@
 ### New accomplishments with this project:
 * Integrate MongoDB with React
 * Retrieve data with a key from an external API (Bible Search API)
-* Create and use a proxy server (with Heroku) to access external API 
+* Create and use a proxy URL (with Heroku) to access external API 
