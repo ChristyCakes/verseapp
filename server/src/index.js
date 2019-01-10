@@ -16,8 +16,8 @@ let app = express();
 app.use(morgan('dev'));
 app.use(express.static(CLIENT_PATH));
 app.use(express.json());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded()); 
 
 

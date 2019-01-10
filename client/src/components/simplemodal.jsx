@@ -109,7 +109,7 @@ class SimpleModal extends React.Component {
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
-                        <Thumbs reference={this.state.reference} />
+                        <Thumbs reference={this.state.reference} handleClose={this.handleClose} handleOpen={this.handleOpen} />
                     </div>
                 </Modal>
             </div>
