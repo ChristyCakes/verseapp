@@ -21,9 +21,6 @@ const styles = theme => ({
 class Thumbs extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-
-        // }
     }
 
 
@@ -31,7 +28,7 @@ class Thumbs extends Component {
 
     // on thumbs up click, add tally to data in server {this.props.reference} and close modal
     handleThumbsUp() {
-        console.log('tally for like!')
+        baseService.post('/api/userdata/like', {"reference": this.props.reference})
         this.props.handleClose();
     }
 

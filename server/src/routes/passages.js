@@ -1,5 +1,4 @@
 import { Router } from 'express';
-//import { tokenMiddleware, isLoggedIn } from '../middleware/auth.mw';
 import PassagesController from '../controllers/passages';
 
 let router = Router();
