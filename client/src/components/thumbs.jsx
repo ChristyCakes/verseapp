@@ -23,18 +23,15 @@ class Thumbs extends Component {
         super(props);
     }
 
-
-
-
-    // on thumbs up click, add tally to data in server {this.props.reference} and close modal
+    // on thumbs up click, add 'like' to userdata in server and close modal
     handleThumbsUp() {
-        baseService.post('/api/userdata/like', {"reference": this.props.reference})
+        baseService.post('/api/userdata', {"reference": this.props.reference, "tally": "likes"})
         this.props.handleClose();
     }
 
     // on thumbs down click, add tally to data in server and display new verse
     handleThumbsDown() {
-        console.log('tally for dislike :(')
+        baseService.post('/api/userdata', {"reference": this.props.reference, "tally": "dislikes"})
         this.props.handleClose();
         this.props.handleOpen();
     }
