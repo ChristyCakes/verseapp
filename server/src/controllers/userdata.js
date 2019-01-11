@@ -4,14 +4,43 @@ const UserdataController = {};
 
 UserdataController.like = async (req, res) => {
     try {
-        await Userdata.countDocuments({reference: req.body.reference}, (err, count) => {
-            if (err){
+
+
+
+        // check for existing reference before posting new
+        await Userdata.countDocuments({ reference: req.body.reference }, (err, count) => {
+            if (err) {
                 res.status(500).send(err)
             } else {
-                console.log(count)   // 0 (expected 1)
-                console.log(req.body.reference)     // Psalm 9:1 (as expected)
+
+                // if count > 0, reference already exists, therefore update likes on the reference
+                if (count > 0) {
+                    Userdata.updateOne({ reference: req.body.reference }, { $inc: { likes: 1 } }, (err, updated) => {
+                        if (err) {
+                            res.status(500).send(err)
+                        } else {
+                            console.log(updated)
+                            res.send("Like Added")
+                        }
+                    })
+
+                    // if count is not > 0, reference doesn't exits, post a new reference with one like (and include dislike field)
+                } else {
+                    Userdata.create({ reference: req.body.reference, likes: 1, dislikes: 0 }, (err, updated) => {
+                        if (err) {
+                            res.status(500).send(err)
+                        } else {
+                            console.log(updated)
+                            res.send("Like Added")
+                        }
+                    })
+                }
             }
         })
+
+
+
+
     }
     catch (err) {
         console.log(err)
