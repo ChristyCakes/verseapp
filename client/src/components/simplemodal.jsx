@@ -63,6 +63,10 @@ class SimpleModal extends React.Component {
                     end: data.end
                 })
             })
+            .catch(err => {
+                alert("Verse failed to load")
+                console.log(err)
+            })
 
             // 2. call Bible api with reference, returns verse content
             .then(() => {
@@ -86,7 +90,6 @@ class SimpleModal extends React.Component {
                             })
                         })
                     })
-                    .catch((e) => console.log(`Error: ${e}`))
             })
             .catch(err => {
                 alert("Your Verse Failed to Load");
