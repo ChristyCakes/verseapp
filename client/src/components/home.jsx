@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import SimpleModal from './simplemodal';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
-
 import Grid from '@material-ui/core/Grid';
-
 import 'isomorphic-fetch';
 
 const reds = createMuiTheme({

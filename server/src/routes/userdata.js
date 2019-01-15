@@ -3,8 +3,13 @@ import UserdataController from '../controllers/userdata';
 
 let router = Router();
 
-router.post('', (req, res) => {
-    UserdataController.post(req, res)
+router.post('/', async (req, res) => {
+    try {
+        UserdataController.post(req, res)
+    } catch (err) {
+        console.log(err);
+        res.sendStatus(500)
+    }   
 })
 
 export default router;
