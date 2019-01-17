@@ -4,7 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import routes from './routes';
 import stateRouting from './middleware/routing.mw';
-import configurePassport from './config/passport';
+import connectToDb from './utils/db'
 import cors from 'cors'
 
 const CLIENT_PATH = join(__dirname, '../../client');
@@ -16,7 +16,7 @@ app.use(express.static(CLIENT_PATH));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 
-configurePassport(app);
+connectToDb(app)
 
 app.use(cors());
 app.use('/api', routes);
