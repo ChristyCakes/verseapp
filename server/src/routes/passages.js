@@ -12,4 +12,23 @@ router.get('/:document', async (req, res) => {
 	}
 })
 
+// delete request example (not currently used in the app)
+router.delete('/:reference', async (req, res) => {
+	try {
+		PassagesController.del(req.params.reference, res)
+	} catch (err) {
+		console.log(err);
+		res.sendStatus(500)
+	}
+})
+
+router.post('/:document', async (req, res) => {
+	try {
+		PassagesController.post(req, res)
+	} catch (err) {
+		console.log(err);
+		res.sendStatus(500)
+	}
+})
+
 export default router;
