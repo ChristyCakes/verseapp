@@ -9,17 +9,16 @@ class Database {
 		this._connect()
 	}
 
-
 	_connect() {
 		mongoose.connect(`mongodb://${server}/${database}`, {
 			useNewUrlParser: true,
-			useCreateIndex: true
+			useCreateIndex: true,
 		})
 			.then(() => {
 				console.log('Database connection successful')
 			})
 			.catch(err => {
-				console.error('Database connection error')
+				console.log('Database connection error', err)
 			})
 	}
 }

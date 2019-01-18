@@ -5,7 +5,7 @@ let router = Router();
 
 router.post('/', async (req, res) => {
     try {
-        UserdataController.post(req, res)
+        await UserdataController.post(req, res)
     } catch (err) {
         console.log(err);
         res.sendStatus(500)
