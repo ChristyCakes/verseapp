@@ -1,5 +1,5 @@
-# Verse App
-### Verse App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Verse App is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments.
+# Ethos
+### Ethos App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Verse App is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments.
 ### This basic web app utilizes the following tools:
 
 * React Router
