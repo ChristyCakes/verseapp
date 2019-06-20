@@ -1,26 +1,54 @@
-import Passages from '../db/models/passages';
-
+const getDB = require('../config/db').getDB;
 const PassagesController = {};
+
+let cursor, random;
 
 PassagesController.get = async (req, res) => {
     try {
-        await Passages.find({
-            emotion: req
-        })
-            .select('reference abbr start end')
-            .exec((err, references) => {
-                if (err) {
-                    console.log(err)
+        const db = getDB();
+        cursor = await db.collection('passages').find(
+            { "emotion": { $in: [req] } },
+            {
+                projection: {
+                    reference: 1,
+                    abbr: 1,
+                    start: 1,
+                    end: 1
                 }
-                let random = Math.floor(Math.random() * references.length)
-                res.json(references[random])
-            });
+            }
+        ).toArray();        
+        random = Math.floor(Math.random() * cursor.length)
+    } catch (e) {
+        console.error(`Unable to issue request, ${e}`)
+        return []
     }
-    catch (err) {
-        console.log(err)
-        res.send(err);
-    }
+    res.json(cursor[random])
 }
+
+
+// the functions below are configured for local database access
+
+// import Passages from '../db/models/passages';
+
+// PassagesController.get = async (req, res) => {
+//     try {
+//         await Passages.find({
+//             emotion: req
+//         })
+//             .select('reference abbr start end')
+//             .exec((err, references) => {
+//                 if (err) {
+//                     console.log(err)
+//                 }
+//                 let random = Math.floor(Math.random() * references.length)
+//                 res.json(references[random])
+//             });
+//     }
+//     catch (err) {
+//         console.log(err)
+//         res.send(err);
+//     }
+// }
 
 
 // delete request example (not currently used in the app)
