@@ -11,3 +11,6 @@
 * Integrate MongoDB with React
 * Retrieve data with a key from an external API (Bible Search API)
 * Create and use a proxy URL (with Heroku) to access external API 
+* Configure MongoDB in an Atlas cloud database
+
+(note: The database was originally configured on a local MongoDB database as seen in commented out code)
