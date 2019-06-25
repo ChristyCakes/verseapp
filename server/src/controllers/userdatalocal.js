@@ -3,7 +3,6 @@ import Userdata from '../db/models/userdata';
 
 const UserdataController = {};
 
-
 UserdataController.post = async (req, res) => {
     try {
 

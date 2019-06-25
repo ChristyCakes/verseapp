@@ -102,17 +102,17 @@ class SimpleModal extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, document, color, label, theme } = this.props;
         return (
             <div>
-                <MuiThemeProvider theme={this.props.theme}>
-                    <Button className={classes.margin} variant="contained" color={this.props.color} onClick={this.handleOpen}>{this.props.label}</Button>
+                <MuiThemeProvider theme={theme}>
+                    <Button className={classes.margin} variant="contained" color={color} onClick={this.handleOpen}>{label}</Button>
                 </MuiThemeProvider>
                 <Modal open={this.state.open} onClose={this.handleClose}>
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
-                        <Thumbs reference={this.state.reference} handleClose={this.handleClose} handleOpen={this.handleOpen} />
+                        <Thumbs reference={this.state.reference} document={document} handleClose={this.handleClose} handleOpen={this.handleOpen} />
                     </div>
                 </Modal>
             </div>

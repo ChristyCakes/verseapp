@@ -23,7 +23,6 @@ PassagesController.get = async (req, res) => {
     }
 }
 
-
 // delete request example (not currently used in the app)
 PassagesController.del = async (req, res) => {
     try {
@@ -69,6 +68,5 @@ PassagesController.post = async (req, res) => {
         res.send(err);
     }
 }
-
 
 export default PassagesController;

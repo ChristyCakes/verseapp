@@ -20,7 +20,8 @@ class ModalContainer extends Component {
     }
 
     render() {
-        return <SimpleModal passage={this.state.passage} label={this.props.label} color={this.props.color}/>
+        const { label, color } = this.props;
+        return <SimpleModal passage={this.state.passage} label={label} color={color}/>
     }
 }
 

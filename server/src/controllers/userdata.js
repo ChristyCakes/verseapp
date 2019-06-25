@@ -5,15 +5,16 @@ UserdataController.post = async (req, res) => {
     try {
         const db = getDB();
         const ref = req.body.reference;
+        const emot = req.body.emotion;
         const tally = req.body.tally;
 
         // update if document exists, use upsert to create if doesn't yet exist
         await db.collection('userdata').updateOne(
             { reference: ref },
+
             {
-                
                 $inc: { [tally]: 1 },
-                $set: { reference: ref },
+                $set: { reference: ref, emotion: emot },
             },
 
             { upsert: true }

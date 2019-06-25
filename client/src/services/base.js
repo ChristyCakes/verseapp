@@ -49,7 +49,6 @@ function json(url, method = 'GET', payload = {}) {
                 let contentType = response.headers.get('Content-Type');
 
                 if (contentType.indexOf('application/json') > -1) {
-                    console.log(response)
                     return response.json();
                 }
 
