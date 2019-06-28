@@ -12,8 +12,8 @@ const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
 
 //**************** */
-console.log(BIBLE_API_KEY)
-console.log(BIBLE_API_KEY)
+console.log(process.env.BIBLE_API_KEY)
+
 
 
 
