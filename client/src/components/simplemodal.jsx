@@ -78,6 +78,15 @@ class SimpleModal extends React.Component {
             // 2. call Bible api with reference, returns verse content
             .then(() => {
                 const url = `https://bibles.org/v2/chapters/eng-NASB:${this.state.abbr}/verses.js?start=${this.state.start}&end=${this.state.end}`
+
+
+                
+                // **************
+                console.log("bible api key: ", BIBLE_API_KEY)
+
+
+
+
                 fetch(proxyurl + url, {
                     headers: new Headers({ 'Authorization': 'Basic ' + window.btoa(`${BIBLE_API_KEY}: x`) }),
                     redirect: "follow",
