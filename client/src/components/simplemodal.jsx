@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import * as baseService from '../services/base';
 import Thumbs from './thumbs'
 
+require('dotenv').config()
+
 const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
