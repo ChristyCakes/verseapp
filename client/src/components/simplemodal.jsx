@@ -56,6 +56,7 @@ class SimpleModal extends React.Component {
         // 1. call express api, returns a random reference from specified emotion document
         baseService.get(`/api/passages/${this.props.document}`)
             .then(data => {
+                console.log("simplemodal baseService.get data: ", data)
                 this.setState({
                     reference: data.reference,
                     abbr: data.abbr,
@@ -75,9 +76,16 @@ class SimpleModal extends React.Component {
                     headers: new Headers({ 'Authorization': 'Basic ' + window.btoa(`${BIBLE_API_KEY}: x`) }),
                     redirect: "follow",
                 })
-                    .then(res => res.json())
+                    .then(res => {
+                        console.log("simplemodal fetch bible api res: ", res)
+                        res.json()
+                    })
                     .then(contents => {
+
+                        console.log("simplemodal fetch api contents: ", contents)
                         let versearray = contents.response.verses
+
+                        console.log("simplemodal fetch api contents: ", versearray)
                         versearray.forEach(verse => {
                             var regex = /(<([^>]+)>)|[0-9]/ig;
                             let versetext = verse.text.replace(regex, "");
