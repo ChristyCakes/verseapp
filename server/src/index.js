@@ -8,6 +8,7 @@ import routes from './routes';
 import stateRouting from './middleware/routing.mw';
 import cors from 'cors'
 require('./config/db')
+require('dotenv').config()
 
 const CLIENT_PATH = join(__dirname, '../../client');
 
