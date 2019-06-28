@@ -10,6 +10,12 @@ import Thumbs from './thumbs'
 const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
+
+//**************** */
+console.log(BIBLE_API_KEY)
+
+
+
 function rand() {
     return Math.round(Math.random() * 20) - 10;
 }
@@ -56,13 +62,6 @@ class SimpleModal extends React.Component {
         // 1. call express api, returns a random reference from specified emotion document
         baseService.get(`/api/passages/${this.props.document}`)
             .then(data => {
-
-
-
-                // **********************
-                console.log("simplemodal baseService.get data: ", data) //good
-
-
                 this.setState({
                     reference: data.reference,
                     abbr: data.abbr,
@@ -80,9 +79,9 @@ class SimpleModal extends React.Component {
                 const url = `https://bibles.org/v2/chapters/eng-NASB:${this.state.abbr}/verses.js?start=${this.state.start}&end=${this.state.end}`
 
 
-                
+
                 // **************
-                console.log("bible api key: ", BIBLE_API_KEY)
+                console.log(BIBLE_API_KEY)
 
 
 

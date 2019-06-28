@@ -21,13 +21,7 @@ PassagesController.get = async (req, res) => {
     } catch (e) {
         console.error(`Unable to issue request, ${e}`)
         return []
-    }
-    
-    
-    //************** */
-    console.log("passages controller: ", cursor[random]) // good
-
-    
+    }   
     res.json(cursor[random])
 }
 
