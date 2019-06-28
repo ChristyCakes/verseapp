@@ -86,15 +86,13 @@ class SimpleModal extends React.Component {
 
 
 
-                            // *******************
-
-                        let jsonres = res.json()
-                        console.log("simplemodal fetch bible api res: ", jsonres)  //
-                        jsonres
+                            // *******************                       
+                        console.log("simplemodal fetch bible api res: ", res.text())  //res.json() --> rejected, GET unauthorized
+                        
 
 
 
-                        // res.json()
+                        res.json()
                     })
                     .then(contents => {
 
