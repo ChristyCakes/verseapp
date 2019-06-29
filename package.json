@@ -8,7 +8,7 @@
     "main": "server/lib/index.js",
     "scripts": {
         "build:client": "webpack",
-        "build:server": "babel ./server/src -d ./server/lib",
+        "build:server": "babel ./server/src -d ./server/lib \"webpack\"",
         "clean": "npm run clean:client && npm run clean:server",
         "clean:client": "rimraf ./client/dist",
         "clean:server": "rimraf ./server/lib",
