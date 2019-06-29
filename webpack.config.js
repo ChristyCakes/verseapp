@@ -5,10 +5,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
         plugins: [
             new Dotenv({ safe: true }),
-            new webpack.EnvironmentPlugin({
-                NODE_ENV: 'development',
-                DEBUG : true
-            })
+            new webpack.EnvironmentPlugin(['NODE_ENV', 'ATLAS_URI', 'BIBLE_API_KEY'])
         ],
         devtool: 'source-map',
         entry: ['@babel/polyfill', './client/src/index.js'],
