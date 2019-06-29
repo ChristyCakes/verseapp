@@ -5,10 +5,10 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
         plugins: [
             new Dotenv(),
-            // new webpack.EnvironmentPlugin({
-            //     NODE_ENV: 'development',
-            //     DEBUG : true
-            // })
+            new webpack.EnvironmentPlugin({
+                NODE_ENV: 'development',
+                DEBUG : true
+            })
         ],
         devtool: 'source-map',
         entry: ['@babel/polyfill', './client/src/index.js'],
