@@ -4,7 +4,7 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
         plugins: [
-            new Dotenv(),
+            new Dotenv({ safe: true }),
             new webpack.EnvironmentPlugin({
                 NODE_ENV: 'development',
                 DEBUG : true
