@@ -2,23 +2,13 @@ const path = require('path');
 const CLIENT_DEST = path.join(__dirname, './client/dist');
 const Dotenv = require('dotenv-webpack');
 
-// module.exports = () => {
-//     return {
-//         plugins: [
-//             new Dotenv(),
-//             new webpack.DefinePlugin({
-//                 'process.env' : {
-//                     NODE_ENV: JSON.stringify(nodeenv)
-//                 }
-//             })
-//         ],
 module.exports = {
         plugins: [
             new Dotenv(),
-            new webpack.EnvironmentPlugin({
-                NODE_ENV: 'development',
-                DEBUG : true
-            })
+            // new webpack.EnvironmentPlugin({
+            //     NODE_ENV: 'development',
+            //     DEBUG : true
+            // })
         ],
         devtool: 'source-map',
         entry: ['@babel/polyfill', './client/src/index.js'],
