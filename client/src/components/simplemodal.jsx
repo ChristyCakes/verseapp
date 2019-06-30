@@ -12,7 +12,7 @@ const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
 
 //**************** */
-console.log(process.env.BIBLE_API_KEY)
+console.log(process.env.BIBLE_API_KEY)  //good
 
 
 
@@ -82,7 +82,7 @@ class SimpleModal extends React.Component {
 
 
                 // **************
-                console.log(BIBLE_API_KEY)
+                console.log(BIBLE_API_KEY)  //good
 
 
 
@@ -96,7 +96,7 @@ class SimpleModal extends React.Component {
 
 
                             // *******************                       
-                        console.log("simplemodal fetch bible api res: ", res.text())  //res.json() --> rejected, GET unauthorized
+                        // console.log("simplemodal fetch bible api res: ", res.text())  //res.json() --> rejected, GET unauthorized
                         
 
 
