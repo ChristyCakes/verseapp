@@ -5,7 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
         plugins: [
-            new Dotenv({ safe: true }),
+            new Dotenv(),
             // new webpack.EnvironmentPlugin(['NODE_ENV'])
         ],
         devtool: 'source-map',
