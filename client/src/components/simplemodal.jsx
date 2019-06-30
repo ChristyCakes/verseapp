@@ -34,7 +34,7 @@ const styles = theme => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
     },
-    
+
     margin: {
         margin: 5
     }
@@ -77,24 +77,7 @@ class SimpleModal extends React.Component {
                 })
                     .then(res => res.json())
                     .then(contents => {
-
-                        // **************
-                        console.log("simplemodal fetch api contents: ", contents)  // undefined
-
-
-
-
                         let versearray = contents.response.verses
-
-
-
-
-                        // ******************
-                        console.log("simplemodal fetch api versearray: ", versearray)
-
-
-
-
                         versearray.forEach(verse => {
                             var regex = /(<([^>]+)>)|[0-9]/ig;
                             let versetext = verse.text.replace(regex, "");
