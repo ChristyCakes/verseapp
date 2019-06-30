@@ -96,7 +96,8 @@ class SimpleModal extends React.Component {
 
 
                             // *******************                       
-                        // console.log("simplemodal fetch bible api res: ", res.text())  //res.json() --> rejected, GET unauthorized
+                        console.log("fetch bible api res: ", res)
+                        console.log("fetch bible api res.json: ", res.json())
                         
 
 
