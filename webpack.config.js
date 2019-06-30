@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = {
         plugins: [
             new Dotenv(),
-            // new webpack.EnvironmentPlugin(['NODE_ENV'])
+            new webpack.EnvironmentPlugin(['NODE_ENV'])
         ],
         devtool: 'source-map',
         entry: ['@babel/polyfill', './client/src/index.js'],
