@@ -1,11 +1,17 @@
 # Ethos
-### Ethos App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Verse App is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments.
+
+## Visit the live site here: https://damp-retreat-48710.herokuapp.com/
+
+### Ethos App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Verse App is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments. Ethos is coming to mobile soon!
 ### This web app utilizes the following tools:
+
+ 
 
 * React Router
 * Express.js
 * MongoDB
 * Material UI
+* Heroku hosting
 
 ### New accomplishments with this project:
 * Integrate MongoDB with React
