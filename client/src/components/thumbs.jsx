@@ -35,7 +35,6 @@ class Thumbs extends Component {
     // on thumbs down click, add tally to data in server and display new verse
     handleThumbsDown() {
         baseService.post('/api/userdata', {"reference": this.props.reference, "emotion": this.props.document, "tally": "dislikes"})
-        .then((response) => console.log(response))
         .then(() => alert("Thumbs Down recorded"))
         .catch( err => { alert("Error: ", err) })
         this.props.handleClose();
