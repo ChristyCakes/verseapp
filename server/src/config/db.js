@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // local connection
 
 // const server = '127.0.0.1:27017'
