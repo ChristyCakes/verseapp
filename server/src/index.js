@@ -1,5 +1,7 @@
 // heroku site https://git.heroku.com/damp-retreat-48710.git
 
+require ('newrelic');
+
 import '@babel/polyfill';
 import { join } from 'path';
 import express from 'express';
