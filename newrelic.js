@@ -6,7 +6,7 @@
  * description of configuration variables and their potential values.
  */
 
- const NEW_RELIC_KEY = process.env.NEW_RELIC_KEY;
+ const NEW_RELIC_LICENSE_KEY = process.env.NEW_RELIC_LICENSE_KEY;
 
 exports.config = {
   /**
@@ -16,7 +16,7 @@ exports.config = {
   /**
    * Your New Relic license key.
    */
-  license_key: NEW_RELIC_KEY,
+  license_key: NEW_RELIC_LICENSE_KEY,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
