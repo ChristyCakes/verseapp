@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SimpleModal from './simplemodal';
 import { withStyles, createMuiTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Grid from '@material-ui/core/Grid';
 import 'isomorphic-fetch';
 

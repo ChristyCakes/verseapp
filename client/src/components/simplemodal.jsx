@@ -16,13 +16,13 @@ const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
 function getModalStyle() {
     const top = 25;
-    // const left = 25;
+    const left = 25;
 
     return {
         top: `${top}%`,
         // left: `${left}%`,
         // transform: `translate(-${top}%, -${left}%)`,
-        margin: auto
+        margin: 'auto'
     };
 }
 
@@ -35,9 +35,9 @@ const styles = theme => ({
         padding: theme.spacing.unit * 4,
     },
 
-    margin: {
-        margin: 5
-    }
+    // margin: {
+    //     margin: 5
+    // }
 });
 
 class SimpleModal extends React.Component {
@@ -108,7 +108,7 @@ class SimpleModal extends React.Component {
                 <MuiThemeProvider theme={theme}>
                     <Button className={classes.margin} variant="contained" color={color} onClick={this.handleOpen}>{label}</Button>
                 </MuiThemeProvider>
-                <Modal open={this.state.open} onClose={this.handleClose} style={{alignItems:'center',justifyContent:'center'}}>
+                <Modal open={this.state.open} onClose={this.handleClose} style={{alignItems:'center',justifyContent:'center', display:'flex'}}>
                     <div style={getModalStyle()} className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
