@@ -1,6 +1,6 @@
 # Ethos
 
-## Visit the live site here: https://ethos.gq/
+## Visit the live site here: https://damp-retreat-48710.herokuapp.com/
 ## or See a video demo here: https://www.youtube.com/watch?v=9kFE9osOwII 
 
 ### Ethos App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Ethos is to provide quick access to Biblical wisdom, comfort, and truth in emotional moments. Ethos is coming to mobile soon!
