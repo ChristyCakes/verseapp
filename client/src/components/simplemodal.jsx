@@ -11,11 +11,11 @@ const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
 function getModalStyle() {
-    const top = 25;
+    // const top = 25;
     // const left = 25;
 
     return {
-        top: `${top}%`,
+        // top: `${top}%`,
         margin: 'auto'
     };
 }
@@ -27,7 +27,7 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
-        maxWidth: '90vh'
+        maxWidth: '45vh'
     },
 
     margin: {
