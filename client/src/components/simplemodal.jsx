@@ -35,9 +35,9 @@ const styles = theme => ({
         padding: theme.spacing.unit * 4,
     },
 
-    // margin: {
-    //     margin: 5
-    // }
+    margin: {
+        margin: 5
+    }
 });
 
 class SimpleModal extends React.Component {
