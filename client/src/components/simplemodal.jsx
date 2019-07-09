@@ -10,18 +10,12 @@ import Thumbs from './thumbs'
 const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
-// function rand() {
-//     return Math.round(Math.random() * 20) - 10;
-// }
-
 function getModalStyle() {
     const top = 25;
-    const left = 25;
+    // const left = 25;
 
     return {
         top: `${top}%`,
-        // left: `${left}%`,
-        // transform: `translate(-${top}%, -${left}%)`,
         margin: 'auto'
     };
 }
@@ -33,6 +27,7 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
+        maxWidth: '90vh'
     },
 
     margin: {
