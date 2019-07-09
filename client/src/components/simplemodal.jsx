@@ -27,7 +27,8 @@ const styles = theme => ({
         backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
         padding: theme.spacing.unit * 4,
-        maxWidth: '45vh'
+        maxWidth: '45vh',
+        maxHeight: '60vh'
     },
 
     margin: {
