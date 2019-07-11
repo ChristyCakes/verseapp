@@ -55,7 +55,7 @@ class Home extends Component {
                         justify="center"
                         alignItems="center"
                     >
-                        <SimpleModal label="angry" theme={reds} color="primary" document="anger" />
+                        <SimpleModal label="stressed" theme={reds} color="secondary" document="stress" />
                         <SimpleModal label="afraid" theme={greens} color="primary" document="fear" />
                     </Grid>
                     <Grid
@@ -66,16 +66,16 @@ class Home extends Component {
                     >
                         <SimpleModal label="ashamed" theme={blues} color="secondary" document="shame" />
                         <SimpleModal label="happy" theme={blues} color="primary" document="happiness" />
-                        <SimpleModal label="stressed" theme={reds} color="secondary" document="stress" />
+                        <SimpleModal label="angry" theme={reds} color="primary" document="anger" />
                     </Grid>
                     <Grid
                         container
                         direction="row"
                         justify="center"
                         alignItems="center"
-                    >
-                        <SimpleModal label="prideful" theme={reds} color="primary" document="pride" />
+                    >                        
                         <SimpleModal label="sad" theme={blues} color="secondary" document="sadness" />
+                        <SimpleModal label="prideful" theme={reds} color="primary" document="pride" />
                         <SimpleModal label="hopeful" theme={greens} color="secondary" document="hope" />
                     </Grid>
                     <Grid
