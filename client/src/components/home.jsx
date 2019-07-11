@@ -73,9 +73,9 @@ class Home extends Component {
                         direction="row"
                         justify="center"
                         alignItems="center"
-                    >                        
-                        <SimpleModal label="sad" theme={blues} color="secondary" document="sadness" />
+                    >
                         <SimpleModal label="prideful" theme={reds} color="primary" document="pride" />
+                        <SimpleModal label="sad" theme={blues} color="secondary" document="sadness" />
                         <SimpleModal label="hopeful" theme={greens} color="secondary" document="hope" />
                     </Grid>
                     <Grid
