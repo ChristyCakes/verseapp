@@ -10,16 +10,6 @@ import Thumbs from './thumbs'
 const proxyurl = "https://serene-crag-81882.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
-function getModalStyle() {
-    // const top = 25;
-    // const left = 25;
-
-    return {
-        // top: `${top}%`,
-        margin: 'auto'
-    };
-}
-
 const styles = theme => ({
     paper: {
         position: 'absolute',
@@ -105,7 +95,7 @@ class SimpleModal extends React.Component {
                     <Button className={classes.margin} variant="contained" color={color} onClick={this.handleOpen}>{label}</Button>
                 </MuiThemeProvider>
                 <Modal open={this.state.open} onClose={this.handleClose} style={{alignItems:'center',justifyContent:'center', display:'flex'}}>
-                    <div style={getModalStyle()} className={classes.paper}>
+                    <div  className={classes.paper}>
                         <Typography variant="h6" id="modal-title">{this.state.reference}</Typography>
                         <Typography variant="subtitle1" id="simple-modal-description">{this.state.content}</Typography>
                         <Thumbs reference={this.state.reference} document={document} handleClose={this.handleClose} handleOpen={this.handleOpen} />
