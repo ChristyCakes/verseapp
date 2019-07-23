@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 import * as baseService from '../services/base';
 import Thumbs from './thumbs'
 
-const proxyurl = "https://serene-crag-81882.herokuapp.com/"
+// const proxyurl = "https://serene-crag-81882.herokuapp.com/"
+const proxyurl = "https://cors-anywhere.herokuapp.com/"
 const BIBLE_API_KEY = process.env.BIBLE_API_KEY
 
 const styles = theme => ({
