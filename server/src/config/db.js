@@ -55,4 +55,4 @@ class Database {
 }
 
 module.exports = new Database()
-module.exports.getDB = function () { return database };
+module.exports.getDB = function() { return database };
