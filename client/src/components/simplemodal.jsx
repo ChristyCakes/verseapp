@@ -62,7 +62,8 @@ class SimpleModal extends React.Component {
                     headers: new Headers({ 'Authorization': 'Basic ' + window.btoa(`${BIBLE_API_KEY}: x`) }),
                     redirect: "follow",
                 })
-                    .then(res => res.json())
+                    .then(res => {
+                        res.json()})
                     .then(contents => {
                         let versearray = contents.response.verses
                         versearray.forEach(verse => {

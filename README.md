@@ -1,7 +1,6 @@
 # Ethos
 
-## Visit the live site here: http://www.ethos.gq/
-## or See a video demo here: https://www.youtube.com/watch?v=9kFE9osOwII 
+## See a video demo here: https://www.youtube.com/watch?v=9kFE9osOwII 
 
 ### Ethos App displays various emotions as buttons on a screen. When an emotion is clicked, a relevant Bible verse appears in a modal. The goal of Ethos is to provide a meaningful experience from a quick snippet of Biblical wisdom, comfort, and truth in emotional moments. Each proverb modal also includes 'thumbs up' and 'thumbs down' buttons that record user feedback.
 ### This web app utilizes the following tools:
